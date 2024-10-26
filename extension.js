@@ -17,12 +17,26 @@ function activate(context) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with  registerCommand
 	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('import-sorter.helloWorld', function () {
+	const disposable = vscode.commands.registerCommand('import-sorter.sortImports', function () {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from import-sorter!');
-		console.log("hello world")
+		vscode.window.showInformationMessage('Get Ready to have your imports sorted!');
+		const editor = vscode.window.activeTextEditor
+		const document = editor.document
+		const text = document.getText()
+		const lines = text.split("\n")
+		var sorted_lines = lines.sort((a,b)=>{
+			return a.length - b.length
+		})
+
+		editor.edit(editBuilder =>{
+			editBuilder.replace(
+				new vscode.Range(0,0,document.lineCount,0),
+				sorted_lines.join("\n")
+			)
+		})
+
 	});
 
 	context.subscriptions.push(disposable);

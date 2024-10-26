@@ -13,8 +13,8 @@
   "main": "./extension.js",
   "contributes": {
     "commands": [{
-      "command": "import-sorter.helloWorld",
-      "title": "Hello World"
+      "command": "import-sorter.sortImports",
+      "title": "Sort Imports"
     }]
   },
   "scripts": {
