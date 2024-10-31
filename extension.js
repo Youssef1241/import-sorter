@@ -23,33 +23,36 @@ function activate(context) {
 		// Display a message box to the user
 		const editor = vscode.window.activeTextEditor
 		const document = editor.document
-		const language = document.languageId
-		const text = document.getText()
-		const lines = text.split(/\r?\n/)
+		var language = document.languageId
+		const lineCount = document.lineCount
+		var lines = []
 
-		
-		if (language === "python"){
-
+		for(var i=0;i<lineCount;i++){
+			lines.push(document.lineAt(i).text)
+		}
+		console.log(lines)
+		if(language === "python"){
 			var importsPositions = getPositions(lines)
 			var dictLength = importsPositions['start-positions'].length
 			var importSection, sortedImportSection
 			for(let i = 0;i < dictLength; i++){
 				importSection = lines.slice(importsPositions['start-positions'][i],importsPositions['end-positions'][i] + 1)
-				console.log(importSection)
 				sortedImportSection = importSection.sort((a,b)=>{
 					return a.length - b.length
 				})
-				lines.splice(importsPositions['start-positions'][i],0, ...sortedImportSection)
+				// lines.splice(importsPositions['start-positions'][i],0, ...sortedImportSection)
 			}
-
-			editor.edit(editBuilder =>{
-				editBuilder.replace(
-					new vscode.Range(0,0,document.lineCount,0),
-					lines.join("\n")
-				)
-			})
 		}
+		// if (language === "python"){
 
+		// 	}
+		// 	editor.edit(editBuilder =>{
+		// 		editBuilder.replace(
+		// 			new vscode.Range(0,0,document.lineCount,0),
+		// 			lines.join("\n")
+		// 		)
+		// 	})
+		// }
 
 	});
 
