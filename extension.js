@@ -30,7 +30,6 @@ function activate(context) {
 		for(var i=0;i<lineCount;i++){
 			lines.push(document.lineAt(i).text)
 		}
-		console.log(lines)
 		if(language === "python"){
 			var importsPositions = getPositions(lines)
 			var dictLength = importsPositions['start-positions'].length
@@ -40,19 +39,15 @@ function activate(context) {
 				sortedImportSection = importSection.sort((a,b)=>{
 					return a.length - b.length
 				})
-				// lines.splice(importsPositions['start-positions'][i],0, ...sortedImportSection)
+				lines.splice(importsPositions['start-positions'][i],sortedImportSection.length, ...sortedImportSection)
 			}
+			editor.edit(editBuilder =>{
+				editBuilder.replace(
+					new vscode.Range(0,0,document.lineCount,0),
+					lines.join("\n")
+				)
+			})
 		}
-		// if (language === "python"){
-
-		// 	}
-		// 	editor.edit(editBuilder =>{
-		// 		editBuilder.replace(
-		// 			new vscode.Range(0,0,document.lineCount,0),
-		// 			lines.join("\n")
-		// 		)
-		// 	})
-		// }
 
 	});
 
