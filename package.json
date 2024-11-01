@@ -1,33 +1,40 @@
 {
-  "name": "import-sorter",
-  "displayName": "import-sorter",
-  "description": "It sorts imports",
-  "version": "0.0.1",
-  "engines": {
-    "vscode": "1.92.2"
-  },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [],
-  "main": "./extension.js",
-  "contributes": {
-    "commands": [{
-      "command": "import-sorter.sortImports",
-      "title": "Sort Imports"
-    }]
-  },
-  "scripts": {
-    "lint": "eslint .",
-    "pretest": "npm run lint",
-    "test": "vscode-test"
-  },
-  "devDependencies": {
-    "@types/vscode": "^1.94.0",
-    "@types/mocha": "^10.0.8",
-    "@types/node": "20.x",
-    "eslint": "^9.11.1",
-    "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "name": "import-sorter",
+    "displayName": "import-sorter",
+    "description": "It sorts imports",
+    "version": "0.0.1",
+    "engines": {
+      "vscode": "1.92.2"
+    },
+    "categories": [
+      "Other"
+    ],
+    "activationEvents": [],
+    "main": "./extension.js",
+    "contributes": {
+      "commands": [{
+        "command": "import-sorter.sortImports",
+        "title": "Sort Imports"
+      }],
+      "keybindings":[
+        {
+            "command": "import-sorter.sortImports",
+            "key": "ctrl+alt+i",
+            "when": "editorTextFocus"
+        }
+      ]
+    },
+    "scripts": {
+      "lint": "eslint .",
+      "pretest": "npm run lint",
+      "test": "vscode-test"
+    },
+    "devDependencies": {
+      "@types/vscode": "^1.94.0",
+      "@types/mocha": "^10.0.8",
+      "@types/node": "20.x",
+      "eslint": "^9.11.1",
+      "@vscode/test-cli": "^0.0.10",
+      "@vscode/test-electron": "^2.4.1"
+    }
   }
-}

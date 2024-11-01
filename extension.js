@@ -21,42 +21,74 @@ function activate(context) {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		// vscode.window.showInformationMessage('Get Ready to have your imports sorted!');
 		const editor = vscode.window.activeTextEditor
 		const document = editor.document
-		const language = document.languageId
-		const text = document.getText()
-		const lines = text.split("\n")
-		
-		if (language === "python"){
-			var lastImport = 0
-			console.log("language is python")
-			for(var i = 0; i<lines.length;i++){
-				if (lines[i].slice(0,4) === "from" || lines[i].slice(0,6) === "import"){
-					lastImport++
-				}
-				else{
-					break
-				}
+		var language = document.languageId
+		const lineCount = document.lineCount
+		var lines = []
+
+		for(var i=0;i<lineCount;i++){
+			lines.push(document.lineAt(i).text)
+		}
+		if(language === "python"){
+			var importsPositions = getPositions(lines)
+			var dictLength = importsPositions['start-positions'].length
+			var importSection, sortedImportSection
+			for(let i = 0;i < dictLength; i++){
+				importSection = lines.slice(importsPositions['start-positions'][i],importsPositions['end-positions'][i] + 1)
+				sortedImportSection = importSection.sort((a,b)=>{
+					return a.length - b.length
+				})
+				lines.splice(importsPositions['start-positions'][i],sortedImportSection.length, ...sortedImportSection)
 			}
-			var to_be_sorted = lines.slice(0,lastImport)
-			var sorted_lines = to_be_sorted.sort((a,b)=>{
-				return a.length - b.length
-			})
-			var remaining_lines = lines.slice(lastImport,lines.length)
-			var final_lines = sorted_lines.concat(remaining_lines)
 			editor.edit(editBuilder =>{
 				editBuilder.replace(
 					new vscode.Range(0,0,document.lineCount,0),
-					final_lines.join("\n")
+					lines.join("\n")
 				)
 			})
 		}
 
-
 	});
 
 	context.subscriptions.push(disposable);
+}
+
+function getPositions(lines){
+		var importsPositions = {}
+		var linesLength = lines.length
+		var prevImport = false
+
+	importsPositions['start-positions'] = []
+	importsPositions['end-positions'] = []
+
+	for(let i = 0; i < linesLength; i++){
+		if (isImport(lines[i])){
+			if(!prevImport){
+				
+				importsPositions['start-positions'].push(i)
+				prevImport = true    
+			}
+			else if (i == linesLength - 1){
+				importsPositions['end-positions'].push(i)
+			}
+		}
+		else{
+			if(prevImport){
+				prevImport = false
+				importsPositions['end-positions'].push(i-1)
+				
+			}
+		}
+	}
+	return importsPositions
+}
+
+function isImport(importString){
+	if (importString.startsWith("from") || importString.startsWith("import")){
+		return true
+	}
+	return false
 }
 
 // This method is called when your extension is deactivated
