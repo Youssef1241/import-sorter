@@ -23,13 +23,14 @@ function activate(context) {
 		// Display a message box to the user
 		const editor = vscode.window.activeTextEditor
 		const document = editor.document
-		var language = document.languageId
+		const language = document.languageId
 		const lineCount = document.lineCount
-		var lines = []
 
+		var lines = []
 		for(var i=0;i<lineCount;i++){
 			lines.push(document.lineAt(i).text)
 		}
+		
 		if(language === "python"){
 			var importsPositions = getPositions(lines)
 			var dictLength = importsPositions['start-positions'].length
@@ -41,6 +42,7 @@ function activate(context) {
 				})
 				lines.splice(importsPositions['start-positions'][i],sortedImportSection.length, ...sortedImportSection)
 			}
+			//improvement: safer to replace import sections only instead of whole doc
 			editor.edit(editBuilder =>{
 				editBuilder.replace(
 					new vscode.Range(0,0,document.lineCount,0),
@@ -76,8 +78,7 @@ function getPositions(lines){
 		else{
 			if(prevImport){
 				prevImport = false
-				importsPositions['end-positions'].push(i-1)
-				
+				importsPositions['end-positions'].push(i-1)	
 			}
 		}
 	}
@@ -86,6 +87,10 @@ function getPositions(lines){
 
 function isImport(importString){
 	if (importString.startsWith("from") || importString.startsWith("import")){
+		return true
+	}
+	
+	else if(importString.trimStart().startsWith("from") || importString.trimStart().startsWith("import")){
 		return true
 	}
 	return false
