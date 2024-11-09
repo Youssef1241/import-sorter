@@ -2,6 +2,7 @@
     "name": "import-sorter",
     "displayName": "import-sorter",
     "description": "It sorts imports",
+    "galleryBanner": {"color": "#07115c"},
     "version": "0.0.1",
     "engines": {
       "vscode": "^1.90.0"
