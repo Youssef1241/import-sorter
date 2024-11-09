@@ -3,15 +3,18 @@
     "displayName": "import-sorter",
     "description": "It sorts imports",
     "galleryBanner": {
-        "color": "#07115c"
+        "color": "#07115c",
+        "theme": "dark"
     },
+    "icon": "logo.png",
+    "keywords": ["imports", "sorter", "python", "import", "sort"],
     "repository": {
         "type": "git",
         "url": "https://github.com/Youssef1241/import-sorter.git"
       },
     "version": "0.0.1",
     "engines": {
-        "vscode": "^1.95.0"
+        "vscode": "^1.90.0"
     },
     "categories": [
         "Other"
@@ -42,7 +45,7 @@
     "devDependencies": {
         "@types/mocha": "^10.0.8",
         "@types/node": "20.x",
-        "@types/vscode": "^1.95.0",
+        "@types/vscode": "^1.90.0",
         "@vscode/test-cli": "^0.0.10",
         "@vscode/test-electron": "^2.4.1",
         "eslint": "^9.11.1"
