@@ -1,65 +1,47 @@
-# import-sorter README
+# import-sorter
 
-This is the README for your extension "import-sorter". After writing up a brief description, we recommend including the following sections.
+**Simple extension to sort your imports:**<br>
+- Sort your imports by line length for a nicer look and feel.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Use the command sort imports or use the shortcut ctrl+alt+I to sort all imports in your python file
 
-For example if there is an image subfolder under your extension project workspace:
+![Sort Your Imports!](demo.gif)
 
-\!\[feature X\]\(images/feature-x.png\)
+## Keyboard Shortcuts
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+This extension provides the following default keyboard shortcuts:
 
-## Requirements
+- `Ctrl+Alt+I` (Windows/Linux) or `Cmd+Alt+I` (Mac): Run the import sorter command.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+### Customizing Shortcuts
 
-## Extension Settings
+You can customize the keyboard shortcuts by modifying the keybindings in your **keybindings.json** file.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+1. Go to **File > Preferences > Keyboard Shortcuts** or press `Ctrl+K Ctrl+S`.
+2. Search for `importSorter.sortImports`.
+3. Right-click the command and select **Change Keybinding**.
+4. Enter your preferred key combination.
 
-For example:
+Alternatively, you can edit the **keybindings.json** file directly:
 
-This extension contributes the following settings:
+```json
+{
+    "key": "Ctrl+Shift+I",
+    "command": "importSorter.sortImports",
+    "when": "editorTextFocus"
+}
+```
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## Supported Fonts and Languages
 
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Supports only python with monospaced fonts. Other languages coming soon!
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
+Initial Release
 
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+## Credits
+Developed by [Youssef Tarek](https://github.com/Youssef1241/import-sorter)

@@ -4,7 +4,7 @@
     "description": "It sorts imports",
     "version": "0.0.1",
     "engines": {
-      "vscode": "1.92.2"
+      "vscode": "^1.90.0"
     },
     "categories": [
       "Other"
@@ -20,6 +20,7 @@
         {
             "command": "import-sorter.sortImports",
             "key": "ctrl+alt+i",
+            "mac": "cmd+alt+i",
             "when": "editorTextFocus"
         }
       ]

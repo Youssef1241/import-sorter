@@ -42,7 +42,7 @@ function activate(context) {
 				})
 				lines.splice(importsPositions['start-positions'][i],sortedImportSection.length, ...sortedImportSection)
 			}
-			//improvement: safer to replace import sections only instead of whole doc
+
 			editor.edit(editBuilder =>{
 				editBuilder.replace(
 					new vscode.Range(0,0,document.lineCount,0),
