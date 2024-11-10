@@ -19,7 +19,7 @@
         "type": "git",
         "url": "https://github.com/Youssef1241/linelength-import-sorter.git"
     },
-    "version": "0.0.2",
+    "version": "1.0.2",
     "engines": {
         "vscode": "^1.90.0"
     },

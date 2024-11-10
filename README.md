@@ -1,4 +1,4 @@
-# import-sorter
+# Sort Imports by Line Length
 
 **Simple extension to sort your imports:**<br>
 - Sort your imports by line length for a nicer look and feel.
@@ -42,6 +42,12 @@ Supports only python with monospaced fonts. Other languages coming soon!
 
 ### 1.0.0
 Initial Release
+
+### 1.0.1
+Minor Improvements
+
+### 1.0.2
+Minor Improvements
 
 ## Credits
 Developed by [Youssef Tarek](https://github.com/Youssef1241/import-sorter)
