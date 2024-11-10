@@ -1,6 +1,6 @@
 {
-    "name": "import-sorter",
-    "displayName": "import-sorter",
+    "name": "linelength-import-sorter",
+    "displayName": "Import Sorter",
     "description": "It sorts imports",
     "publisher": "lavish-studios",
     "galleryBanner": {
