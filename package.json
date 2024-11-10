@@ -11,7 +11,7 @@
     "keywords": ["imports", "sorter", "python", "import", "sort"],
     "repository": {
         "type": "git",
-        "url": "https://github.com/Youssef1241/import-sorter.git"
+        "url": "https://github.com/Youssef1241/linelength-import-sorter.git"
       },
     "version": "0.0.1",
     "engines": {
@@ -25,13 +25,13 @@
     "contributes": {
         "commands": [
             {
-                "command": "import-sorter.sortImports",
+                "command": "linelength-import-sorter.sortImports",
                 "title": "Sort Imports"
             }
         ],
         "keybindings": [
             {
-                "command": "import-sorter.sortImports",
+                "command": "linelength-import-sorter.sortImports",
                 "key": "ctrl+alt+i",
                 "mac": "cmd+alt+i",
                 "when": "editorTextFocus"

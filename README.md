@@ -7,7 +7,7 @@
 
 Use the command sort imports or use the shortcut ctrl+alt+I to sort all imports in your python file
 
-![Sort Your Imports!](https://github.com/Youssef1241/import-sorter/blob/main/demo.gif?raw=true)
+![Sort Your Imports!](https://github.com/Youssef1241/linelength-import-sorter/blob/main/demo.gif?raw=true)
 
 ## Keyboard Shortcuts
 
