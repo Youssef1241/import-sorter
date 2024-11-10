@@ -20,7 +20,7 @@ This extension provides the following default keyboard shortcuts:
 You can customize the keyboard shortcuts by modifying the keybindings in your **keybindings.json** file.
 
 1. Go to **File > Preferences > Keyboard Shortcuts** or press `Ctrl+K Ctrl+S`.
-2. Search for `importSorter.sortImports`.
+2. Search for `linelength-import-sorter.sortImports`.
 3. Right-click the command and select **Change Keybinding**.
 4. Enter your preferred key combination.
 
@@ -29,7 +29,7 @@ Alternatively, you can edit the **keybindings.json** file directly:
 ```json
 {
     "key": "Ctrl+Shift+I",
-    "command": "importSorter.sortImports",
+    "command": "linelength-import-sorter.sortImports",
     "when": "editorTextFocus"
 }
 ```
