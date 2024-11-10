@@ -2,6 +2,7 @@
     "name": "import-sorter",
     "displayName": "import-sorter",
     "description": "It sorts imports",
+    "publisher": "lavish-studios",
     "galleryBanner": {
         "color": "#07115c",
         "theme": "dark"
