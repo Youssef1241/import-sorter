@@ -82,11 +82,11 @@ function getPositions(lines){
 }
 
 function isImport(importString){
-	if (importString.startsWith("from") || importString.startsWith("import")){
+	if (importString.startsWith("from ") || importString.startsWith("import ")){
 		return true
 	}
 	
-	else if(importString.trimStart().startsWith("from") || importString.trimStart().startsWith("import")){
+	else if(importString.trimStart().startsWith("from ") || importString.trimStart().startsWith("import ")){
 		return true
 	}
 	return false
