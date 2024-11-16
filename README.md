@@ -60,9 +60,6 @@ Currently only works with python (🐍`.py` files) and <span style = "font-famil
 ### 0.1.0
 Initial Release
 
-### 0.1.1
-- Updated README file
-
 ## Credits
 Development and Logo Design by [Youssef Tarek](https://github.com/Youssef1241/import-sorter)
 
