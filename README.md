@@ -1,13 +1,22 @@
 # Sort Imports by Line Length
 
-**Simple extension to sort your imports:**<br>
-- Sort your imports by line length for a nicer look and feel.
+Organize your imports effortlessly!
+
+This extension helps you tidy up that bulk of imports at the top of your file, for a nicer look and feel.
+
+- 🧹 Sort imports in ascending order by their line length for a cleaner look.
+
+---
+
+<span style="font-size: 0.8em;">*Only supports .py files for now, see [Coming Soon](#coming-soon) section for more*</span>
+
+
 
 ## Features
 
-Use the command sort imports or use the shortcut ctrl+alt+I to sort all imports in your python file
+Use the command 'Sort Imports' or use the shortcut `Ctrl+Alt+I` to sort all imports in your file
 
-![Sort Your Imports!](https://github.com/Youssef1241/linelength-import-sorter/blob/main/demo.gif?raw=true)
+![Sort Your Imports!](demo.gif)
 
 ## Keyboard Shortcuts
 
@@ -34,20 +43,24 @@ Alternatively, you can edit the **keybindings.json** file directly:
 }
 ```
 
+## Coming Soon
+- Sort in order of descending line length
+- Sort blocks with commented imports
+- Sort within a selected chunk of text
+- Support for Javacript
+- Support for Arial and Helvetica fonts (coming not so soon because who even codes in arial or helvetica? :) 
+
+
 ## Supported Fonts and Languages
 
-Supports only python with monospaced fonts. Other languages coming soon!
+Currently only works with python (🐍`.py` files) and <span style = "font-family: courier new;">monospace</span> fonts
 
 ## Release Notes
 
-### 1.0.0
+### 0.1.0
 Initial Release
 
-### 1.0.1
-Minor Improvements
-
-### 1.0.2
-Minor Improvements
-
 ## Credits
-Developed by [Youssef Tarek](https://github.com/Youssef1241/import-sorter)
+Development and Logo Design by [Youssef Tarek](https://github.com/Youssef1241/import-sorter)
+
+If you face any problems or would like to suggest new features, just [open an issue on the repo](https://github.com/Youssef1241/linelength-import-sorter/issues), or leave a review on the [marketplace](https://marketplace.visualstudio.com/items?itemName=lavish-studios.linelength-import-sorter&ssr=false#review-details)

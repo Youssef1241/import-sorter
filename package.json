@@ -1,7 +1,7 @@
 {
     "name": "linelength-import-sorter",
     "displayName": "Import Sorter by Line Length",
-    "description": "It sorts imports",
+    "description": "Sort your imports by line length",
     "publisher": "lavish-studios",
     "galleryBanner": {
         "color": "#07115c",
@@ -19,7 +19,7 @@
         "type": "git",
         "url": "https://github.com/Youssef1241/linelength-import-sorter.git"
     },
-    "version": "1.0.2",
+    "version": "0.1.0",
     "engines": {
         "vscode": "^1.90.0"
     },
