@@ -26,6 +26,7 @@
     "categories": [
         "Other"
     ],
+    "homepage": "https://github.com/Youssef1241/linelength-import-sorter/blob/main/README.md",
     "activationEvents": [],
     "main": "./extension.js",
     "contributes": {

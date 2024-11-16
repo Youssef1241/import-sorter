@@ -16,7 +16,7 @@ This extension helps you tidy up that bulk of imports at the top of your file, f
 
 Use the command 'Sort Imports' or use the shortcut `Ctrl+Alt+I` to sort all imports in your file
 
-![Sort Your Imports!](demo.gif)
+![Sort Your Imports!](https://github.com/Youssef1241/linelength-import-sorter/blob/main/demo.gif?raw=true)
 
 ## Keyboard Shortcuts
 
