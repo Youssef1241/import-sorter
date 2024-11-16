@@ -3,3 +3,6 @@ All notable changes to this "linelength-import-sorter" will be documented in thi
 
 ## [0.1.0]
 - Initial release
+
+## [0.1.1]
+- Updating Readme

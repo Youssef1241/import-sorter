@@ -60,7 +60,12 @@ Currently only works with python (🐍`.py` files) and <span style = "font-famil
 ### 0.1.0
 Initial Release
 
+### 0.1.1
+Updating Readme
+
+
+
 ## Credits
 Development and Logo Design by [Youssef Tarek](https://github.com/Youssef1241/import-sorter)
 
-If you face any problems or would like to suggest new features, just [open an issue on the repo](https://github.com/Youssef1241/linelength-import-sorter/issues), or leave a review on the [marketplace](https://marketplace.visualstudio.com/items?itemName=lavish-studios.linelength-import-sorter&ssr=false#review-details)
+If you face any problems or would like to suggest new features, just [open an issue on the repo](https://github.com/Youssef1241/linelength-import-sorter/issues), or write a review on the [marketplace](https://marketplace.visualstudio.com/items?itemName=lavish-studios.linelength-import-sorter&ssr=false#review-details)
