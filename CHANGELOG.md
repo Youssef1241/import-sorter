@@ -11,3 +11,7 @@ All notable changes to this "linelength-import-sorter" will be documented in thi
 ## [0.1.2]
 ### Changes
 - Updated README file
+
+## [0.1.3]
+### Changes
+- Updated README file
