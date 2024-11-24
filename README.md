@@ -55,6 +55,9 @@ Alternatively, you can edit the **keybindings.json** file directly:
 
 Currently only works with python (🐍`.py` files) and <span style = "font-family: courier new;">monospace</span> fonts
 
+## Known Issues
+The imports are being recognized by string manipulation for now, so if your file has several lines in a row that start with `from` or `import`, they will be sorted. This happens only when the lines start with `from` or `import` with no other characters (except spaces) preceding them. If your lines start with "from or 'import, they will be fine and won't be sorted.
+
 ## Release Notes
 
 ### 0.1.0
@@ -63,6 +66,11 @@ Initial Release
 ### 0.1.1
 Updating Readme
 
+### 0.1.2
+Updating Readme
+
+### 0.1.3
+Bug Fixes
 
 
 ## Credits

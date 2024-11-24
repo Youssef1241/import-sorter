@@ -16,7 +16,6 @@ function activate(context) {
 	const disposable = vscode.commands.registerCommand('linelength-import-sorter.sortImports', function () {
 		// The code you place here will be executed every time your command is executed
 
-		// Display a message box to the user
 		const editor = vscode.window.activeTextEditor
 		const document = editor.document
 		const language = document.languageId
@@ -34,6 +33,16 @@ function activate(context) {
 			for(let i = 0;i < dictLength; i++){
 				importSection = lines.slice(importsPositions['start-positions'][i],importsPositions['end-positions'][i] + 1)
 				sortedImportSection = importSection.sort((a,b)=>{
+					var aHashIndex = a.indexOf('#')
+					var bHashIndex = b.indexOf('#')
+					if (aHashIndex !== -1){
+						a = a.slice(0,aHashIndex)
+					}
+					if (bHashIndex !== -1){
+						b = b.slice(0,bHashIndex)
+					}
+					a = a.trim()
+					b = b.trim()
 					return a.length - b.length
 				})
 				lines.splice(importsPositions['start-positions'][i],sortedImportSection.length, ...sortedImportSection)
